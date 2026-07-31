@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type Application = {
     id: number;
     company: string;
@@ -21,6 +23,10 @@ export default function ApplicationsPage() {
                         <h2>{app.position}</h2>
                         <p>{app.company}</p>
                         <p>Estado: {app.status}</p>
+
+                        <Link href={`/applications/${app.id}`}>
+                            Ver detalles
+                        </Link>
                     </li>
                 ))}
             </ul>
